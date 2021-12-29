@@ -1,0 +1,147 @@
+html,
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: #f6f7f8;
+}
+
+#menu_control {
+  display: none; /* 隱藏checkbox */
+}
+
+#menu_control:checked ~ nav .navitem {
+  left: 0;
+}
+/* 透過checkbox是否被勾選，選取到nvv裡面的.navitem */
+
+@media (min-width: 600px) {
+  .burger {
+    display: none;
+  }
+}
+/* 製作小螢幕的時候，隱藏 burger 選單。 */
+
+@media (min-width: 600px) {
+  .burger {
+    display: none;
+  }
+
+  nav > .navitem {
+    background-color: #f6f7f8;
+    position: relative;
+    left: 0;
+
+    display: flex;
+    height: auto;
+    width: auto;
+  }
+  nav > .navitem > a {
+    display: block;
+    border-bottom: none;
+    color: #242321;
+  }
+}
+
+nav {
+  /* outline: solid 1px red; */
+  padding: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 20px;
+  font-size: 20px;
+  position: relative;
+  font-weight: bold;
+}
+
+header {
+  /* outline: solid 1px blue; */
+  /*   height: 300px; */
+  background-color: #dcecfc;
+  /*   line-height: 300px; */
+  text-align: center;
+}
+
+.title {
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.scetionitems {
+  /* 容器 */
+  /* outline: solid 5px red; */
+  margin: 0 auto;
+  width: 1200px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.image {
+  width: 100%;
+  display: block; /* 消除下方小條空白 或使用 vertical-align:top */
+}
+
+.picname {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  width: 100%;
+  background-color: #b7d1eb;
+}
+
+.scetionitems > .container {
+  flex: none;
+  width: 270px;
+  margin: 10px;
+}
+
+@media (max-width: 1200px) {
+  .scetionitems > .container {
+    width: 45%;
+  }
+  .scetionitems {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .scetionitems > .container {
+    width: 90%;
+  }
+  .scetionitems {
+    width: 100%;
+  }
+}
+
+label {
+  position: absolute; /* 設定絕對定位 */
+  top: 10px;
+  right: 10px;
+}
+.navitem {
+  width: 88%;
+  height: 100vh; /* 視寬高 */
+  background-color: #81b2e3;
+  position: absolute;
+  top: 0px;
+  left: -100%;
+  transition: 0.5s;
+}
+
+.navitem > a {
+  display: block;
+  padding: 10px;
+  margin: 10px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  border-bottom: 2px solid #ffffff;
+}
